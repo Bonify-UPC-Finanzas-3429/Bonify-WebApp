@@ -1,0 +1,12 @@
+<div class="card-container" *ngIf="profile">
+  <img [src]="profile.profileImage || 'https://cdn-icons-png.flaticon.com/512/149/149071.png'" alt="Profile image" class="profile-img" />
+  <div class="info">
+    <h2>{{ profile.firstName }} {{ profile.lastName }}</h2>
+    <p>Correo Electrónico: {{ profile.email }}</p>
+    <p>Número de Celular: +51 {{ profile.phoneNumber }}</p>
+    <div class="buttons">
+      <button (click)="openEditDialog()">Editar Perfil</button>
+      <button>Cerrar Sesión</button>
+    </div>
+  </div>
+</div>

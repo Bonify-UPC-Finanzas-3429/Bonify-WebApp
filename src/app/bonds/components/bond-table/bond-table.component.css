@@ -1,0 +1,103 @@
+.bond-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 20px 0;
+  font-family: 'Segoe UI', sans-serif;
+  background-color: #fdfdfd;
+  box-shadow: 0 0 10px rgba(0,0,0,0.05);
+}
+
+.bond-table th,
+.bond-table td {
+  padding: 12px 16px;
+  border: 1px solid #e0e0e0;
+  text-align: left;
+}
+
+.bond-table th {
+  background: linear-gradient(to bottom, #19CEDB, #2BAFA6);
+  color: white;
+  font-weight: bold;
+}
+
+.bond-table tbody tr:hover {
+  background-color: #f1f9fa;
+}
+
+.bond-table button {
+  background: linear-gradient(to bottom, #19CEDB, #2BAFA6);
+  color: white;
+  border: none;
+  border-radius: 12px;
+  font-weight: bold;
+  padding: 6px 16px;
+  margin: 4px 4px;
+  font-family: 'Segoe UI', 'Verdana', sans-serif;
+  cursor: pointer;
+  transition: transform 0.2s, box-shadow 0.2s;
+  white-space: nowrap;
+}
+
+.bond-table button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 10px rgba(0, 188, 212, 0.6);
+}
+.bond-table button.btn-delete {
+  background: linear-gradient(to bottom, #f44336, #c62828);
+}
+
+.bond-table button.btn-delete:hover {
+  box-shadow: 0 6px 10px rgba(244, 67, 54, 0.6);
+}
+
+.bond-table td[data-label="Acciones"] {
+  display: flex;
+  gap: 8px;
+  justify-content: start;
+  flex-wrap: wrap;
+}
+
+@media (max-width: 768px) {
+  .bond-table {
+    border: 0;
+  }
+
+  .bond-table thead {
+    display: none;
+  }
+
+  .bond-table tr {
+    display: block;
+    margin-bottom: 16px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+  }
+
+  .bond-table td {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 8px 12px;
+    border: none;
+    border-bottom: 1px solid #eee;
+    position: relative;
+  }
+
+  .bond-table td::before {
+    content: attr(data-label);
+    font-weight: bold;
+    color: #333;
+    text-transform: capitalize;
+  }
+
+  .bond-table td:last-child {
+    border-bottom: none;
+  }
+
+  .bond-table button {
+    margin: 4px 0;
+    width: 100%;
+  }
+}

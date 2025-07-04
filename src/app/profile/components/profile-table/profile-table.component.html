@@ -1,0 +1,32 @@
+<table class="user-table">
+  <thead>
+  <tr>
+    <th>ID</th>
+    <th>Nombre</th>
+    <th>Apellido</th>
+    <th>Correo</th>
+    <th>Teléfono</th>
+    <th>Rol</th>
+    <th>Acciones</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr *ngFor="let user of users">
+    <td data-label="ID">{{ user.id }}</td>
+    <td data-label="Nombre">{{ user.firstName }}</td>
+    <td data-label="Apellido">{{ user.lastName }}</td>
+    <td data-label="Correo">{{ user.email }}</td>
+    <td data-label="Teléfono">{{ user.phoneNumber }}</td>
+    <td data-label="Rol">
+      <select [(ngModel)]="user.role" (change)="updateRole(user)">
+        <option value="user">User</option>
+        <option value="admin">Admin</option>
+      </select>
+    </td>
+    <td data-label="Acciones">
+      <button (click)="viewProfile(user.id)">Ver perfil</button>
+      <button *ngIf="user.role !== 'admin'" (click)="viewPlans(user.id)">Ver planes</button>
+    </td>
+  </tr>
+  </tbody>
+</table>

@@ -1,0 +1,21 @@
+.top-bar {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  padding: 10px 20px;
+  background-color: #f8f9fa;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.icon-container {
+  display: flex;
+  gap: 15px;
+}
+
+button.mat-icon-button {
+  color: #2d6a4f;
+}
+
+button.mat-icon-button:hover {
+  color: #1b5e20;
+}

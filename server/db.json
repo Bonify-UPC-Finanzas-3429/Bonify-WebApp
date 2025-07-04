@@ -1,0 +1,1638 @@
+{
+  "authentication": [
+    {
+      "id": "1",
+      "username": "farmer1@example.com",
+      "password": "123456",
+      "role": "user"
+    },
+    {
+      "id": "2",
+      "username": "consultant1@example.com",
+      "password": "abc123",
+      "role": "admin"
+    },
+    {
+      "id": "3",
+      "username": "farmer2@example.com",
+      "password": "654321",
+      "role": "user"
+    },
+    {
+      "id": "4",
+      "username": "farmer3@example.com",
+      "password": "112233",
+      "role": "user"
+    },
+    {
+      "id": "5",
+      "username": "farmer4@example.com",
+      "password": "445566",
+      "role": "user"
+    }
+  ],
+  "users": [
+    {
+      "id": "1",
+      "userId": 1,
+      "firstName": "Juandsdsffds",
+      "lastName": "Pérez",
+      "email": "farmer1@gmail.com",
+      "phoneNumber": "912345678",
+      "profileImage": "",
+      "role": "user"
+    },
+    {
+      "id": "2",
+      "userId": 2,
+      "firstName": "Alice",
+      "lastName": "Smith",
+      "email": "consultant1@example.com",
+      "phoneNumber": "922334455",
+      "profileImage": "",
+      "role": "admin"
+    },
+    {
+      "id": "3",
+      "userId": 3,
+      "firstName": "Pedro",
+      "lastName": "Ramírez",
+      "email": "farmer2@example.com",
+      "phoneNumber": "923456789",
+      "profileImage": "https://example.com/images/pedro.png",
+      "role": "admin"
+    },
+    {
+      "id": "4",
+      "userId": 4,
+      "firstName": "Elena",
+      "lastName": "Martínez",
+      "email": "farmer3@example.com",
+      "phoneNumber": "934567891",
+      "profileImage": "https://example.com/images/elena.png",
+      "role": "user"
+    },
+    {
+      "id": "5",
+      "userId": 5,
+      "firstName": "Luis",
+      "lastName": "García",
+      "email": "farmer4@example.com",
+      "phoneNumber": "945678912",
+      "profileImage": "https://example.com/images/luis.png",
+      "role": "user"
+    }
+  ],
+  "bonds": [
+    {
+      "id": 1,
+      "bondId": "1",
+      "name": "r",
+      "nominalValue": 1000,
+      "issueDate": "2025-07-04T00:00:00.000Z",
+      "termInYears": 5,
+      "annualInterestRate": 7,
+      "rateType": "Efectiva",
+      "paymentFrequency": "Mensual",
+      "gracePeriod": 0,
+      "calculatedInstallment": 60,
+      "tcea": 0.07,
+      "tea": 0.07,
+      "userId": 1
+    },
+    {
+      "id": 2,
+      "bondId": "2",
+      "name": "1",
+      "nominalValue": 1000,
+      "issueDate": "2025-07-04T00:00:00.000Z",
+      "termInYears": 5,
+      "annualInterestRate": 7,
+      "rateType": "Nominal",
+      "paymentFrequency": "Bimestral",
+      "gracePeriod": 5,
+      "calculatedInstallment": 30,
+      "tcea": 0.0720737,
+      "tea": 0.0720737,
+      "userId": 1
+    },
+    {
+      "id": 3,
+      "bondId": "3",
+      "name": "e",
+      "nominalValue": 3000,
+      "issueDate": "2025-07-04T00:00:00.000Z",
+      "termInYears": 5,
+      "annualInterestRate": 9,
+      "rateType": "Efectiva",
+      "paymentFrequency": "Mensual",
+      "gracePeriod": 0,
+      "calculatedInstallment": 60,
+      "tcea": 0.09,
+      "tea": 0.09,
+      "userId": 1
+    }
+  ],
+  "installments": [
+    {
+      "id": "1",
+      "periodNumber": 1,
+      "bondId": "1",
+      "interest": 5.65,
+      "amortization": 14.05,
+      "totalPayment": 19.7,
+      "remainingBalance": 985.95,
+      "paymentDate": "2025-08-04T00:00:00.000Z"
+    },
+    {
+      "id": 2,
+      "periodNumber": 2,
+      "bondId": 1,
+      "interest": 5.57,
+      "amortization": 14.13,
+      "totalPayment": 19.7,
+      "remainingBalance": 971.82,
+      "paymentDate": "2025-09-04T00:00:00.000Z"
+    },
+    {
+      "id": 3,
+      "periodNumber": 3,
+      "bondId": 1,
+      "interest": 5.49,
+      "amortization": 14.21,
+      "totalPayment": 19.7,
+      "remainingBalance": 957.61,
+      "paymentDate": "2025-10-04T00:00:00.000Z"
+    },
+    {
+      "id": 4,
+      "periodNumber": 4,
+      "bondId": 1,
+      "interest": 5.41,
+      "amortization": 14.29,
+      "totalPayment": 19.7,
+      "remainingBalance": 943.32,
+      "paymentDate": "2025-11-04T00:00:00.000Z"
+    },
+    {
+      "id": 5,
+      "periodNumber": 5,
+      "bondId": 1,
+      "interest": 5.33,
+      "amortization": 14.37,
+      "totalPayment": 19.7,
+      "remainingBalance": 928.95,
+      "paymentDate": "2025-12-04T00:00:00.000Z"
+    },
+    {
+      "id": 6,
+      "periodNumber": 6,
+      "bondId": 1,
+      "interest": 5.25,
+      "amortization": 14.45,
+      "totalPayment": 19.7,
+      "remainingBalance": 914.5,
+      "paymentDate": "2026-01-04T00:00:00.000Z"
+    },
+    {
+      "id": 7,
+      "periodNumber": 7,
+      "bondId": 1,
+      "interest": 5.17,
+      "amortization": 14.53,
+      "totalPayment": 19.7,
+      "remainingBalance": 899.97,
+      "paymentDate": "2026-02-04T00:00:00.000Z"
+    },
+    {
+      "id": 8,
+      "periodNumber": 8,
+      "bondId": 1,
+      "interest": 5.09,
+      "amortization": 14.61,
+      "totalPayment": 19.7,
+      "remainingBalance": 885.36,
+      "paymentDate": "2026-03-04T00:00:00.000Z"
+    },
+    {
+      "id": 9,
+      "periodNumber": 9,
+      "bondId": 1,
+      "interest": 5.01,
+      "amortization": 14.69,
+      "totalPayment": 19.7,
+      "remainingBalance": 870.67,
+      "paymentDate": "2026-04-04T00:00:00.000Z"
+    },
+    {
+      "id": 10,
+      "periodNumber": 10,
+      "bondId": 1,
+      "interest": 4.92,
+      "amortization": 14.78,
+      "totalPayment": 19.7,
+      "remainingBalance": 855.89,
+      "paymentDate": "2026-05-04T00:00:00.000Z"
+    },
+    {
+      "id": 11,
+      "periodNumber": 11,
+      "bondId": 1,
+      "interest": 4.84,
+      "amortization": 14.86,
+      "totalPayment": 19.7,
+      "remainingBalance": 841.03,
+      "paymentDate": "2026-06-04T00:00:00.000Z"
+    },
+    {
+      "id": 12,
+      "periodNumber": 12,
+      "bondId": 1,
+      "interest": 4.76,
+      "amortization": 14.94,
+      "totalPayment": 19.7,
+      "remainingBalance": 826.09,
+      "paymentDate": "2026-07-04T00:00:00.000Z"
+    },
+    {
+      "id": 13,
+      "periodNumber": 13,
+      "bondId": 1,
+      "interest": 4.67,
+      "amortization": 15.03,
+      "totalPayment": 19.7,
+      "remainingBalance": 811.06,
+      "paymentDate": "2026-08-04T00:00:00.000Z"
+    },
+    {
+      "id": 14,
+      "periodNumber": 14,
+      "bondId": 1,
+      "interest": 4.59,
+      "amortization": 15.11,
+      "totalPayment": 19.7,
+      "remainingBalance": 795.95,
+      "paymentDate": "2026-09-04T00:00:00.000Z"
+    },
+    {
+      "id": 15,
+      "periodNumber": 15,
+      "bondId": 1,
+      "interest": 4.5,
+      "amortization": 15.2,
+      "totalPayment": 19.7,
+      "remainingBalance": 780.75,
+      "paymentDate": "2026-10-04T00:00:00.000Z"
+    },
+    {
+      "id": 16,
+      "periodNumber": 16,
+      "bondId": 1,
+      "interest": 4.41,
+      "amortization": 15.29,
+      "totalPayment": 19.7,
+      "remainingBalance": 765.46,
+      "paymentDate": "2026-11-04T00:00:00.000Z"
+    },
+    {
+      "id": 17,
+      "periodNumber": 17,
+      "bondId": 1,
+      "interest": 4.33,
+      "amortization": 15.37,
+      "totalPayment": 19.7,
+      "remainingBalance": 750.09,
+      "paymentDate": "2026-12-04T00:00:00.000Z"
+    },
+    {
+      "id": 18,
+      "periodNumber": 18,
+      "bondId": 1,
+      "interest": 4.24,
+      "amortization": 15.46,
+      "totalPayment": 19.7,
+      "remainingBalance": 734.63,
+      "paymentDate": "2027-01-04T00:00:00.000Z"
+    },
+    {
+      "id": 19,
+      "periodNumber": 19,
+      "bondId": 1,
+      "interest": 4.15,
+      "amortization": 15.55,
+      "totalPayment": 19.7,
+      "remainingBalance": 719.08,
+      "paymentDate": "2027-02-04T00:00:00.000Z"
+    },
+    {
+      "id": 20,
+      "periodNumber": 20,
+      "bondId": 1,
+      "interest": 4.07,
+      "amortization": 15.63,
+      "totalPayment": 19.7,
+      "remainingBalance": 703.45,
+      "paymentDate": "2027-03-04T00:00:00.000Z"
+    },
+    {
+      "id": 21,
+      "periodNumber": 21,
+      "bondId": 1,
+      "interest": 3.98,
+      "amortization": 15.72,
+      "totalPayment": 19.7,
+      "remainingBalance": 687.73,
+      "paymentDate": "2027-04-04T00:00:00.000Z"
+    },
+    {
+      "id": 22,
+      "periodNumber": 22,
+      "bondId": 1,
+      "interest": 3.89,
+      "amortization": 15.81,
+      "totalPayment": 19.7,
+      "remainingBalance": 671.92,
+      "paymentDate": "2027-05-04T00:00:00.000Z"
+    },
+    {
+      "id": 23,
+      "periodNumber": 23,
+      "bondId": 1,
+      "interest": 3.8,
+      "amortization": 15.9,
+      "totalPayment": 19.7,
+      "remainingBalance": 656.02,
+      "paymentDate": "2027-06-04T00:00:00.000Z"
+    },
+    {
+      "id": 24,
+      "periodNumber": 24,
+      "bondId": 1,
+      "interest": 3.71,
+      "amortization": 15.99,
+      "totalPayment": 19.7,
+      "remainingBalance": 640.03,
+      "paymentDate": "2027-07-04T00:00:00.000Z"
+    },
+    {
+      "id": 25,
+      "periodNumber": 25,
+      "bondId": 1,
+      "interest": 3.62,
+      "amortization": 16.08,
+      "totalPayment": 19.7,
+      "remainingBalance": 623.95,
+      "paymentDate": "2027-08-04T00:00:00.000Z"
+    },
+    {
+      "id": 26,
+      "periodNumber": 26,
+      "bondId": 1,
+      "interest": 3.53,
+      "amortization": 16.17,
+      "totalPayment": 19.7,
+      "remainingBalance": 607.78,
+      "paymentDate": "2027-09-04T00:00:00.000Z"
+    },
+    {
+      "id": 27,
+      "periodNumber": 27,
+      "bondId": 1,
+      "interest": 3.44,
+      "amortization": 16.26,
+      "totalPayment": 19.7,
+      "remainingBalance": 591.52,
+      "paymentDate": "2027-10-04T00:00:00.000Z"
+    },
+    {
+      "id": 28,
+      "periodNumber": 28,
+      "bondId": 1,
+      "interest": 3.34,
+      "amortization": 16.36,
+      "totalPayment": 19.7,
+      "remainingBalance": 575.16,
+      "paymentDate": "2027-11-04T00:00:00.000Z"
+    },
+    {
+      "id": 29,
+      "periodNumber": 29,
+      "bondId": 1,
+      "interest": 3.25,
+      "amortization": 16.45,
+      "totalPayment": 19.7,
+      "remainingBalance": 558.71,
+      "paymentDate": "2027-12-04T00:00:00.000Z"
+    },
+    {
+      "id": 30,
+      "periodNumber": 30,
+      "bondId": 1,
+      "interest": 3.16,
+      "amortization": 16.54,
+      "totalPayment": 19.7,
+      "remainingBalance": 542.17,
+      "paymentDate": "2028-01-04T00:00:00.000Z"
+    },
+    {
+      "id": 31,
+      "periodNumber": 31,
+      "bondId": 1,
+      "interest": 3.07,
+      "amortization": 16.63,
+      "totalPayment": 19.7,
+      "remainingBalance": 525.54,
+      "paymentDate": "2028-02-04T00:00:00.000Z"
+    },
+    {
+      "id": 32,
+      "periodNumber": 32,
+      "bondId": 1,
+      "interest": 2.97,
+      "amortization": 16.73,
+      "totalPayment": 19.7,
+      "remainingBalance": 508.81,
+      "paymentDate": "2028-03-04T00:00:00.000Z"
+    },
+    {
+      "id": 33,
+      "periodNumber": 33,
+      "bondId": 1,
+      "interest": 2.88,
+      "amortization": 16.82,
+      "totalPayment": 19.7,
+      "remainingBalance": 491.99,
+      "paymentDate": "2028-04-04T00:00:00.000Z"
+    },
+    {
+      "id": 34,
+      "periodNumber": 34,
+      "bondId": 1,
+      "interest": 2.78,
+      "amortization": 16.92,
+      "totalPayment": 19.7,
+      "remainingBalance": 475.07,
+      "paymentDate": "2028-05-04T00:00:00.000Z"
+    },
+    {
+      "id": 35,
+      "periodNumber": 35,
+      "bondId": 1,
+      "interest": 2.69,
+      "amortization": 17.01,
+      "totalPayment": 19.7,
+      "remainingBalance": 458.06,
+      "paymentDate": "2028-06-04T00:00:00.000Z"
+    },
+    {
+      "id": 36,
+      "periodNumber": 36,
+      "bondId": 1,
+      "interest": 2.59,
+      "amortization": 17.11,
+      "totalPayment": 19.7,
+      "remainingBalance": 440.95,
+      "paymentDate": "2028-07-04T00:00:00.000Z"
+    },
+    {
+      "id": 37,
+      "periodNumber": 37,
+      "bondId": 1,
+      "interest": 2.49,
+      "amortization": 17.21,
+      "totalPayment": 19.7,
+      "remainingBalance": 423.74,
+      "paymentDate": "2028-08-04T00:00:00.000Z"
+    },
+    {
+      "id": 38,
+      "periodNumber": 38,
+      "bondId": 1,
+      "interest": 2.4,
+      "amortization": 17.3,
+      "totalPayment": 19.7,
+      "remainingBalance": 406.44,
+      "paymentDate": "2028-09-04T00:00:00.000Z"
+    },
+    {
+      "id": 39,
+      "periodNumber": 39,
+      "bondId": 1,
+      "interest": 2.3,
+      "amortization": 17.4,
+      "totalPayment": 19.7,
+      "remainingBalance": 389.04,
+      "paymentDate": "2028-10-04T00:00:00.000Z"
+    },
+    {
+      "id": 40,
+      "periodNumber": 40,
+      "bondId": 1,
+      "interest": 2.2,
+      "amortization": 17.5,
+      "totalPayment": 19.7,
+      "remainingBalance": 371.54,
+      "paymentDate": "2028-11-04T00:00:00.000Z"
+    },
+    {
+      "id": 41,
+      "periodNumber": 41,
+      "bondId": 1,
+      "interest": 2.1,
+      "amortization": 17.6,
+      "totalPayment": 19.7,
+      "remainingBalance": 353.94,
+      "paymentDate": "2028-12-04T00:00:00.000Z"
+    },
+    {
+      "id": 42,
+      "periodNumber": 42,
+      "bondId": 1,
+      "interest": 2,
+      "amortization": 17.7,
+      "totalPayment": 19.7,
+      "remainingBalance": 336.24,
+      "paymentDate": "2029-01-04T00:00:00.000Z"
+    },
+    {
+      "id": 43,
+      "periodNumber": 43,
+      "bondId": 1,
+      "interest": 1.9,
+      "amortization": 17.8,
+      "totalPayment": 19.7,
+      "remainingBalance": 318.44,
+      "paymentDate": "2029-02-04T00:00:00.000Z"
+    },
+    {
+      "id": 44,
+      "periodNumber": 44,
+      "bondId": 1,
+      "interest": 1.8,
+      "amortization": 17.9,
+      "totalPayment": 19.7,
+      "remainingBalance": 300.54,
+      "paymentDate": "2029-03-04T00:00:00.000Z"
+    },
+    {
+      "id": 45,
+      "periodNumber": 45,
+      "bondId": 1,
+      "interest": 1.7,
+      "amortization": 18,
+      "totalPayment": 19.7,
+      "remainingBalance": 282.54,
+      "paymentDate": "2029-04-04T00:00:00.000Z"
+    },
+    {
+      "id": 46,
+      "periodNumber": 46,
+      "bondId": 1,
+      "interest": 1.6,
+      "amortization": 18.1,
+      "totalPayment": 19.7,
+      "remainingBalance": 264.44,
+      "paymentDate": "2029-05-04T00:00:00.000Z"
+    },
+    {
+      "id": 47,
+      "periodNumber": 47,
+      "bondId": 1,
+      "interest": 1.5,
+      "amortization": 18.2,
+      "totalPayment": 19.7,
+      "remainingBalance": 246.24,
+      "paymentDate": "2029-06-04T00:00:00.000Z"
+    },
+    {
+      "id": 48,
+      "periodNumber": 48,
+      "bondId": 1,
+      "interest": 1.39,
+      "amortization": 18.31,
+      "totalPayment": 19.7,
+      "remainingBalance": 227.93,
+      "paymentDate": "2029-07-04T00:00:00.000Z"
+    },
+    {
+      "id": 49,
+      "periodNumber": 49,
+      "bondId": 1,
+      "interest": 1.29,
+      "amortization": 18.41,
+      "totalPayment": 19.7,
+      "remainingBalance": 209.52,
+      "paymentDate": "2029-08-04T00:00:00.000Z"
+    },
+    {
+      "id": 50,
+      "periodNumber": 50,
+      "bondId": 1,
+      "interest": 1.18,
+      "amortization": 18.52,
+      "totalPayment": 19.7,
+      "remainingBalance": 191,
+      "paymentDate": "2029-09-04T00:00:00.000Z"
+    },
+    {
+      "id": 51,
+      "periodNumber": 51,
+      "bondId": 1,
+      "interest": 1.08,
+      "amortization": 18.62,
+      "totalPayment": 19.7,
+      "remainingBalance": 172.38,
+      "paymentDate": "2029-10-04T00:00:00.000Z"
+    },
+    {
+      "id": 52,
+      "periodNumber": 52,
+      "bondId": 1,
+      "interest": 0.97,
+      "amortization": 18.73,
+      "totalPayment": 19.7,
+      "remainingBalance": 153.65,
+      "paymentDate": "2029-11-04T00:00:00.000Z"
+    },
+    {
+      "id": 53,
+      "periodNumber": 53,
+      "bondId": 1,
+      "interest": 0.87,
+      "amortization": 18.83,
+      "totalPayment": 19.7,
+      "remainingBalance": 134.82,
+      "paymentDate": "2029-12-04T00:00:00.000Z"
+    },
+    {
+      "id": 54,
+      "periodNumber": 54,
+      "bondId": 1,
+      "interest": 0.76,
+      "amortization": 18.94,
+      "totalPayment": 19.7,
+      "remainingBalance": 115.88,
+      "paymentDate": "2030-01-04T00:00:00.000Z"
+    },
+    {
+      "id": 55,
+      "periodNumber": 55,
+      "bondId": 1,
+      "interest": 0.66,
+      "amortization": 19.04,
+      "totalPayment": 19.7,
+      "remainingBalance": 96.84,
+      "paymentDate": "2030-02-04T00:00:00.000Z"
+    },
+    {
+      "id": 56,
+      "periodNumber": 56,
+      "bondId": 1,
+      "interest": 0.55,
+      "amortization": 19.15,
+      "totalPayment": 19.7,
+      "remainingBalance": 77.69,
+      "paymentDate": "2030-03-04T00:00:00.000Z"
+    },
+    {
+      "id": 57,
+      "periodNumber": 57,
+      "bondId": 1,
+      "interest": 0.44,
+      "amortization": 19.26,
+      "totalPayment": 19.7,
+      "remainingBalance": 58.43,
+      "paymentDate": "2030-04-04T00:00:00.000Z"
+    },
+    {
+      "id": 58,
+      "periodNumber": 58,
+      "bondId": 1,
+      "interest": 0.33,
+      "amortization": 19.37,
+      "totalPayment": 19.7,
+      "remainingBalance": 39.06,
+      "paymentDate": "2030-05-04T00:00:00.000Z"
+    },
+    {
+      "id": 59,
+      "periodNumber": 59,
+      "bondId": 1,
+      "interest": 0.22,
+      "amortization": 19.48,
+      "totalPayment": 19.7,
+      "remainingBalance": 19.58,
+      "paymentDate": "2030-06-04T00:00:00.000Z"
+    },
+    {
+      "id": 60,
+      "periodNumber": 60,
+      "bondId": 1,
+      "interest": 0.11,
+      "amortization": 19.58,
+      "totalPayment": 19.7,
+      "remainingBalance": 0,
+      "paymentDate": "2030-07-04T00:00:00.000Z"
+    },
+    {
+      "id": 61,
+      "periodNumber": 1,
+      "bondId": 2,
+      "interest": 11.67,
+      "amortization": 28.03,
+      "totalPayment": 39.7,
+      "remainingBalance": 971.97,
+      "paymentDate": "2025-09-04T00:00:00.000Z"
+    },
+    {
+      "id": 62,
+      "periodNumber": 2,
+      "bondId": 2,
+      "interest": 11.34,
+      "amortization": 28.36,
+      "totalPayment": 39.7,
+      "remainingBalance": 943.61,
+      "paymentDate": "2025-11-04T00:00:00.000Z"
+    },
+    {
+      "id": 63,
+      "periodNumber": 3,
+      "bondId": 2,
+      "interest": 11.01,
+      "amortization": 28.69,
+      "totalPayment": 39.7,
+      "remainingBalance": 914.92,
+      "paymentDate": "2026-01-04T00:00:00.000Z"
+    },
+    {
+      "id": 64,
+      "periodNumber": 4,
+      "bondId": 2,
+      "interest": 10.67,
+      "amortization": 29.03,
+      "totalPayment": 39.7,
+      "remainingBalance": 885.89,
+      "paymentDate": "2026-03-04T00:00:00.000Z"
+    },
+    {
+      "id": 65,
+      "periodNumber": 5,
+      "bondId": 2,
+      "interest": 10.34,
+      "amortization": 29.36,
+      "totalPayment": 39.7,
+      "remainingBalance": 856.53,
+      "paymentDate": "2026-05-04T00:00:00.000Z"
+    },
+    {
+      "id": 66,
+      "periodNumber": 6,
+      "bondId": 2,
+      "interest": 9.99,
+      "amortization": 29.71,
+      "totalPayment": 39.7,
+      "remainingBalance": 826.82,
+      "paymentDate": "2026-07-04T00:00:00.000Z"
+    },
+    {
+      "id": 67,
+      "periodNumber": 7,
+      "bondId": 2,
+      "interest": 9.65,
+      "amortization": 30.05,
+      "totalPayment": 39.7,
+      "remainingBalance": 796.77,
+      "paymentDate": "2026-09-04T00:00:00.000Z"
+    },
+    {
+      "id": 68,
+      "periodNumber": 8,
+      "bondId": 2,
+      "interest": 9.3,
+      "amortization": 30.4,
+      "totalPayment": 39.7,
+      "remainingBalance": 766.37,
+      "paymentDate": "2026-11-04T00:00:00.000Z"
+    },
+    {
+      "id": 69,
+      "periodNumber": 9,
+      "bondId": 2,
+      "interest": 8.94,
+      "amortization": 30.76,
+      "totalPayment": 39.7,
+      "remainingBalance": 735.61,
+      "paymentDate": "2027-01-04T00:00:00.000Z"
+    },
+    {
+      "id": 70,
+      "periodNumber": 10,
+      "bondId": 2,
+      "interest": 8.58,
+      "amortization": 31.12,
+      "totalPayment": 39.7,
+      "remainingBalance": 704.49,
+      "paymentDate": "2027-03-04T00:00:00.000Z"
+    },
+    {
+      "id": 71,
+      "periodNumber": 11,
+      "bondId": 2,
+      "interest": 8.22,
+      "amortization": 31.48,
+      "totalPayment": 39.7,
+      "remainingBalance": 673.01,
+      "paymentDate": "2027-05-04T00:00:00.000Z"
+    },
+    {
+      "id": 72,
+      "periodNumber": 12,
+      "bondId": 2,
+      "interest": 7.85,
+      "amortization": 31.85,
+      "totalPayment": 39.7,
+      "remainingBalance": 641.16,
+      "paymentDate": "2027-07-04T00:00:00.000Z"
+    },
+    {
+      "id": 73,
+      "periodNumber": 13,
+      "bondId": 2,
+      "interest": 7.48,
+      "amortization": 32.22,
+      "totalPayment": 39.7,
+      "remainingBalance": 608.94,
+      "paymentDate": "2027-09-04T00:00:00.000Z"
+    },
+    {
+      "id": 74,
+      "periodNumber": 14,
+      "bondId": 2,
+      "interest": 7.1,
+      "amortization": 32.6,
+      "totalPayment": 39.7,
+      "remainingBalance": 576.34,
+      "paymentDate": "2027-11-04T00:00:00.000Z"
+    },
+    {
+      "id": 75,
+      "periodNumber": 15,
+      "bondId": 2,
+      "interest": 6.72,
+      "amortization": 32.98,
+      "totalPayment": 39.7,
+      "remainingBalance": 543.36,
+      "paymentDate": "2028-01-04T00:00:00.000Z"
+    },
+    {
+      "id": 76,
+      "periodNumber": 16,
+      "bondId": 2,
+      "interest": 6.34,
+      "amortization": 33.36,
+      "totalPayment": 39.7,
+      "remainingBalance": 510,
+      "paymentDate": "2028-03-04T00:00:00.000Z"
+    },
+    {
+      "id": 77,
+      "periodNumber": 17,
+      "bondId": 2,
+      "interest": 5.95,
+      "amortization": 33.75,
+      "totalPayment": 39.7,
+      "remainingBalance": 476.25,
+      "paymentDate": "2028-05-04T00:00:00.000Z"
+    },
+    {
+      "id": 78,
+      "periodNumber": 18,
+      "bondId": 2,
+      "interest": 5.56,
+      "amortization": 34.14,
+      "totalPayment": 39.7,
+      "remainingBalance": 442.11,
+      "paymentDate": "2028-07-04T00:00:00.000Z"
+    },
+    {
+      "id": 79,
+      "periodNumber": 19,
+      "bondId": 2,
+      "interest": 5.16,
+      "amortization": 34.54,
+      "totalPayment": 39.7,
+      "remainingBalance": 407.57,
+      "paymentDate": "2028-09-04T00:00:00.000Z"
+    },
+    {
+      "id": 80,
+      "periodNumber": 20,
+      "bondId": 2,
+      "interest": 4.75,
+      "amortization": 34.95,
+      "totalPayment": 39.7,
+      "remainingBalance": 372.62,
+      "paymentDate": "2028-11-04T00:00:00.000Z"
+    },
+    {
+      "id": 81,
+      "periodNumber": 21,
+      "bondId": 2,
+      "interest": 4.35,
+      "amortization": 35.35,
+      "totalPayment": 39.7,
+      "remainingBalance": 337.27,
+      "paymentDate": "2029-01-04T00:00:00.000Z"
+    },
+    {
+      "id": 82,
+      "periodNumber": 22,
+      "bondId": 2,
+      "interest": 3.93,
+      "amortization": 35.77,
+      "totalPayment": 39.7,
+      "remainingBalance": 301.5,
+      "paymentDate": "2029-03-04T00:00:00.000Z"
+    },
+    {
+      "id": 83,
+      "periodNumber": 23,
+      "bondId": 2,
+      "interest": 3.52,
+      "amortization": 36.18,
+      "totalPayment": 39.7,
+      "remainingBalance": 265.32,
+      "paymentDate": "2029-05-04T00:00:00.000Z"
+    },
+    {
+      "id": 84,
+      "periodNumber": 24,
+      "bondId": 2,
+      "interest": 3.1,
+      "amortization": 36.6,
+      "totalPayment": 39.7,
+      "remainingBalance": 228.72,
+      "paymentDate": "2029-07-04T00:00:00.000Z"
+    },
+    {
+      "id": 85,
+      "periodNumber": 25,
+      "bondId": 2,
+      "interest": 2.67,
+      "amortization": 37.03,
+      "totalPayment": 39.7,
+      "remainingBalance": 191.69,
+      "paymentDate": "2029-09-04T00:00:00.000Z"
+    },
+    {
+      "id": 86,
+      "periodNumber": 26,
+      "bondId": 2,
+      "interest": 2.24,
+      "amortization": 37.46,
+      "totalPayment": 39.7,
+      "remainingBalance": 154.23,
+      "paymentDate": "2029-11-04T00:00:00.000Z"
+    },
+    {
+      "id": 87,
+      "periodNumber": 27,
+      "bondId": 2,
+      "interest": 1.8,
+      "amortization": 37.9,
+      "totalPayment": 39.7,
+      "remainingBalance": 116.33,
+      "paymentDate": "2030-01-04T00:00:00.000Z"
+    },
+    {
+      "id": 88,
+      "periodNumber": 28,
+      "bondId": 2,
+      "interest": 1.36,
+      "amortization": 38.34,
+      "totalPayment": 39.7,
+      "remainingBalance": 77.99,
+      "paymentDate": "2030-03-04T00:00:00.000Z"
+    },
+    {
+      "id": 89,
+      "periodNumber": 29,
+      "bondId": 2,
+      "interest": 0.91,
+      "amortization": 38.79,
+      "totalPayment": 39.7,
+      "remainingBalance": 39.2,
+      "paymentDate": "2030-05-04T00:00:00.000Z"
+    },
+    {
+      "id": 90,
+      "periodNumber": 30,
+      "bondId": 2,
+      "interest": 0.46,
+      "amortization": 39.2,
+      "totalPayment": 39.7,
+      "remainingBalance": 0,
+      "paymentDate": "2030-07-04T00:00:00.000Z"
+    },
+    {
+      "id": 91,
+      "periodNumber": 1,
+      "bondId": 3,
+      "interest": 21.62,
+      "amortization": 40.14,
+      "totalPayment": 61.76,
+      "remainingBalance": 2959.86,
+      "paymentDate": "2025-08-04T00:00:00.000Z"
+    },
+    {
+      "id": 92,
+      "periodNumber": 2,
+      "bondId": 3,
+      "interest": 21.33,
+      "amortization": 40.43,
+      "totalPayment": 61.76,
+      "remainingBalance": 2919.43,
+      "paymentDate": "2025-09-04T00:00:00.000Z"
+    },
+    {
+      "id": 93,
+      "periodNumber": 3,
+      "bondId": 3,
+      "interest": 21.04,
+      "amortization": 40.72,
+      "totalPayment": 61.76,
+      "remainingBalance": 2878.71,
+      "paymentDate": "2025-10-04T00:00:00.000Z"
+    },
+    {
+      "id": 94,
+      "periodNumber": 4,
+      "bondId": 3,
+      "interest": 20.75,
+      "amortization": 41.01,
+      "totalPayment": 61.76,
+      "remainingBalance": 2837.7,
+      "paymentDate": "2025-11-04T00:00:00.000Z"
+    },
+    {
+      "id": 95,
+      "periodNumber": 5,
+      "bondId": 3,
+      "interest": 20.45,
+      "amortization": 41.31,
+      "totalPayment": 61.76,
+      "remainingBalance": 2796.39,
+      "paymentDate": "2025-12-04T00:00:00.000Z"
+    },
+    {
+      "id": 96,
+      "periodNumber": 6,
+      "bondId": 3,
+      "interest": 20.15,
+      "amortization": 41.61,
+      "totalPayment": 61.76,
+      "remainingBalance": 2754.78,
+      "paymentDate": "2026-01-04T00:00:00.000Z"
+    },
+    {
+      "id": 97,
+      "periodNumber": 7,
+      "bondId": 3,
+      "interest": 19.85,
+      "amortization": 41.91,
+      "totalPayment": 61.76,
+      "remainingBalance": 2712.87,
+      "paymentDate": "2026-02-04T00:00:00.000Z"
+    },
+    {
+      "id": 98,
+      "periodNumber": 8,
+      "bondId": 3,
+      "interest": 19.55,
+      "amortization": 42.21,
+      "totalPayment": 61.76,
+      "remainingBalance": 2670.66,
+      "paymentDate": "2026-03-04T00:00:00.000Z"
+    },
+    {
+      "id": 99,
+      "periodNumber": 9,
+      "bondId": 3,
+      "interest": 19.25,
+      "amortization": 42.51,
+      "totalPayment": 61.76,
+      "remainingBalance": 2628.15,
+      "paymentDate": "2026-04-04T00:00:00.000Z"
+    },
+    {
+      "id": 100,
+      "periodNumber": 10,
+      "bondId": 3,
+      "interest": 18.94,
+      "amortization": 42.82,
+      "totalPayment": 61.76,
+      "remainingBalance": 2585.33,
+      "paymentDate": "2026-05-04T00:00:00.000Z"
+    },
+    {
+      "id": 101,
+      "periodNumber": 11,
+      "bondId": 3,
+      "interest": 18.63,
+      "amortization": 43.13,
+      "totalPayment": 61.76,
+      "remainingBalance": 2542.2,
+      "paymentDate": "2026-06-04T00:00:00.000Z"
+    },
+    {
+      "id": 102,
+      "periodNumber": 12,
+      "bondId": 3,
+      "interest": 18.32,
+      "amortization": 43.44,
+      "totalPayment": 61.76,
+      "remainingBalance": 2498.76,
+      "paymentDate": "2026-07-04T00:00:00.000Z"
+    },
+    {
+      "id": 103,
+      "periodNumber": 13,
+      "bondId": 3,
+      "interest": 18.01,
+      "amortization": 43.75,
+      "totalPayment": 61.76,
+      "remainingBalance": 2455.01,
+      "paymentDate": "2026-08-04T00:00:00.000Z"
+    },
+    {
+      "id": 104,
+      "periodNumber": 14,
+      "bondId": 3,
+      "interest": 17.69,
+      "amortization": 44.07,
+      "totalPayment": 61.76,
+      "remainingBalance": 2410.94,
+      "paymentDate": "2026-09-04T00:00:00.000Z"
+    },
+    {
+      "id": 105,
+      "periodNumber": 15,
+      "bondId": 3,
+      "interest": 17.38,
+      "amortization": 44.38,
+      "totalPayment": 61.76,
+      "remainingBalance": 2366.56,
+      "paymentDate": "2026-10-04T00:00:00.000Z"
+    },
+    {
+      "id": 106,
+      "periodNumber": 16,
+      "bondId": 3,
+      "interest": 17.06,
+      "amortization": 44.7,
+      "totalPayment": 61.76,
+      "remainingBalance": 2321.86,
+      "paymentDate": "2026-11-04T00:00:00.000Z"
+    },
+    {
+      "id": 107,
+      "periodNumber": 17,
+      "bondId": 3,
+      "interest": 16.73,
+      "amortization": 45.03,
+      "totalPayment": 61.76,
+      "remainingBalance": 2276.83,
+      "paymentDate": "2026-12-04T00:00:00.000Z"
+    },
+    {
+      "id": 108,
+      "periodNumber": 18,
+      "bondId": 3,
+      "interest": 16.41,
+      "amortization": 45.35,
+      "totalPayment": 61.76,
+      "remainingBalance": 2231.48,
+      "paymentDate": "2027-01-04T00:00:00.000Z"
+    },
+    {
+      "id": 109,
+      "periodNumber": 19,
+      "bondId": 3,
+      "interest": 16.08,
+      "amortization": 45.68,
+      "totalPayment": 61.76,
+      "remainingBalance": 2185.8,
+      "paymentDate": "2027-02-04T00:00:00.000Z"
+    },
+    {
+      "id": 110,
+      "periodNumber": 20,
+      "bondId": 3,
+      "interest": 15.75,
+      "amortization": 46.01,
+      "totalPayment": 61.76,
+      "remainingBalance": 2139.79,
+      "paymentDate": "2027-03-04T00:00:00.000Z"
+    },
+    {
+      "id": 111,
+      "periodNumber": 21,
+      "bondId": 3,
+      "interest": 15.42,
+      "amortization": 46.34,
+      "totalPayment": 61.76,
+      "remainingBalance": 2093.45,
+      "paymentDate": "2027-04-04T00:00:00.000Z"
+    },
+    {
+      "id": 112,
+      "periodNumber": 22,
+      "bondId": 3,
+      "interest": 15.09,
+      "amortization": 46.67,
+      "totalPayment": 61.76,
+      "remainingBalance": 2046.78,
+      "paymentDate": "2027-05-04T00:00:00.000Z"
+    },
+    {
+      "id": 113,
+      "periodNumber": 23,
+      "bondId": 3,
+      "interest": 14.75,
+      "amortization": 47.01,
+      "totalPayment": 61.76,
+      "remainingBalance": 1999.77,
+      "paymentDate": "2027-06-04T00:00:00.000Z"
+    },
+    {
+      "id": 114,
+      "periodNumber": 24,
+      "bondId": 3,
+      "interest": 14.41,
+      "amortization": 47.35,
+      "totalPayment": 61.76,
+      "remainingBalance": 1952.42,
+      "paymentDate": "2027-07-04T00:00:00.000Z"
+    },
+    {
+      "id": 115,
+      "periodNumber": 25,
+      "bondId": 3,
+      "interest": 14.07,
+      "amortization": 47.69,
+      "totalPayment": 61.76,
+      "remainingBalance": 1904.73,
+      "paymentDate": "2027-08-04T00:00:00.000Z"
+    },
+    {
+      "id": 116,
+      "periodNumber": 26,
+      "bondId": 3,
+      "interest": 13.73,
+      "amortization": 48.03,
+      "totalPayment": 61.76,
+      "remainingBalance": 1856.7,
+      "paymentDate": "2027-09-04T00:00:00.000Z"
+    },
+    {
+      "id": 117,
+      "periodNumber": 27,
+      "bondId": 3,
+      "interest": 13.38,
+      "amortization": 48.38,
+      "totalPayment": 61.76,
+      "remainingBalance": 1808.32,
+      "paymentDate": "2027-10-04T00:00:00.000Z"
+    },
+    {
+      "id": 118,
+      "periodNumber": 28,
+      "bondId": 3,
+      "interest": 13.03,
+      "amortization": 48.73,
+      "totalPayment": 61.76,
+      "remainingBalance": 1759.59,
+      "paymentDate": "2027-11-04T00:00:00.000Z"
+    },
+    {
+      "id": 119,
+      "periodNumber": 29,
+      "bondId": 3,
+      "interest": 12.68,
+      "amortization": 49.08,
+      "totalPayment": 61.76,
+      "remainingBalance": 1710.51,
+      "paymentDate": "2027-12-04T00:00:00.000Z"
+    },
+    {
+      "id": 120,
+      "periodNumber": 30,
+      "bondId": 3,
+      "interest": 12.33,
+      "amortization": 49.43,
+      "totalPayment": 61.76,
+      "remainingBalance": 1661.08,
+      "paymentDate": "2028-01-04T00:00:00.000Z"
+    },
+    {
+      "id": 121,
+      "periodNumber": 31,
+      "bondId": 3,
+      "interest": 11.97,
+      "amortization": 49.79,
+      "totalPayment": 61.76,
+      "remainingBalance": 1611.29,
+      "paymentDate": "2028-02-04T00:00:00.000Z"
+    },
+    {
+      "id": 122,
+      "periodNumber": 32,
+      "bondId": 3,
+      "interest": 11.61,
+      "amortization": 50.15,
+      "totalPayment": 61.76,
+      "remainingBalance": 1561.14,
+      "paymentDate": "2028-03-04T00:00:00.000Z"
+    },
+    {
+      "id": 123,
+      "periodNumber": 33,
+      "bondId": 3,
+      "interest": 11.25,
+      "amortization": 50.51,
+      "totalPayment": 61.76,
+      "remainingBalance": 1510.63,
+      "paymentDate": "2028-04-04T00:00:00.000Z"
+    },
+    {
+      "id": 124,
+      "periodNumber": 34,
+      "bondId": 3,
+      "interest": 10.89,
+      "amortization": 50.87,
+      "totalPayment": 61.76,
+      "remainingBalance": 1459.76,
+      "paymentDate": "2028-05-04T00:00:00.000Z"
+    },
+    {
+      "id": 125,
+      "periodNumber": 35,
+      "bondId": 3,
+      "interest": 10.52,
+      "amortization": 51.24,
+      "totalPayment": 61.76,
+      "remainingBalance": 1408.52,
+      "paymentDate": "2028-06-04T00:00:00.000Z"
+    },
+    {
+      "id": 126,
+      "periodNumber": 36,
+      "bondId": 3,
+      "interest": 10.15,
+      "amortization": 51.61,
+      "totalPayment": 61.76,
+      "remainingBalance": 1356.91,
+      "paymentDate": "2028-07-04T00:00:00.000Z"
+    },
+    {
+      "id": 127,
+      "periodNumber": 37,
+      "bondId": 3,
+      "interest": 9.78,
+      "amortization": 51.98,
+      "totalPayment": 61.76,
+      "remainingBalance": 1304.93,
+      "paymentDate": "2028-08-04T00:00:00.000Z"
+    },
+    {
+      "id": 128,
+      "periodNumber": 38,
+      "bondId": 3,
+      "interest": 9.41,
+      "amortization": 52.35,
+      "totalPayment": 61.76,
+      "remainingBalance": 1252.58,
+      "paymentDate": "2028-09-04T00:00:00.000Z"
+    },
+    {
+      "id": 129,
+      "periodNumber": 39,
+      "bondId": 3,
+      "interest": 9.03,
+      "amortization": 52.73,
+      "totalPayment": 61.76,
+      "remainingBalance": 1199.85,
+      "paymentDate": "2028-10-04T00:00:00.000Z"
+    },
+    {
+      "id": 130,
+      "periodNumber": 40,
+      "bondId": 3,
+      "interest": 8.65,
+      "amortization": 53.11,
+      "totalPayment": 61.76,
+      "remainingBalance": 1146.74,
+      "paymentDate": "2028-11-04T00:00:00.000Z"
+    },
+    {
+      "id": 131,
+      "periodNumber": 41,
+      "bondId": 3,
+      "interest": 8.26,
+      "amortization": 53.5,
+      "totalPayment": 61.76,
+      "remainingBalance": 1093.24,
+      "paymentDate": "2028-12-04T00:00:00.000Z"
+    },
+    {
+      "id": 132,
+      "periodNumber": 42,
+      "bondId": 3,
+      "interest": 7.88,
+      "amortization": 53.88,
+      "totalPayment": 61.76,
+      "remainingBalance": 1039.36,
+      "paymentDate": "2029-01-04T00:00:00.000Z"
+    },
+    {
+      "id": 133,
+      "periodNumber": 43,
+      "bondId": 3,
+      "interest": 7.49,
+      "amortization": 54.27,
+      "totalPayment": 61.76,
+      "remainingBalance": 985.09,
+      "paymentDate": "2029-02-04T00:00:00.000Z"
+    },
+    {
+      "id": 134,
+      "periodNumber": 44,
+      "bondId": 3,
+      "interest": 7.1,
+      "amortization": 54.66,
+      "totalPayment": 61.76,
+      "remainingBalance": 930.43,
+      "paymentDate": "2029-03-04T00:00:00.000Z"
+    },
+    {
+      "id": 135,
+      "periodNumber": 45,
+      "bondId": 3,
+      "interest": 6.71,
+      "amortization": 55.05,
+      "totalPayment": 61.76,
+      "remainingBalance": 875.38,
+      "paymentDate": "2029-04-04T00:00:00.000Z"
+    },
+    {
+      "id": 136,
+      "periodNumber": 46,
+      "bondId": 3,
+      "interest": 6.31,
+      "amortization": 55.45,
+      "totalPayment": 61.76,
+      "remainingBalance": 819.93,
+      "paymentDate": "2029-05-04T00:00:00.000Z"
+    },
+    {
+      "id": 137,
+      "periodNumber": 47,
+      "bondId": 3,
+      "interest": 5.91,
+      "amortization": 55.85,
+      "totalPayment": 61.76,
+      "remainingBalance": 764.08,
+      "paymentDate": "2029-06-04T00:00:00.000Z"
+    },
+    {
+      "id": 138,
+      "periodNumber": 48,
+      "bondId": 3,
+      "interest": 5.51,
+      "amortization": 56.25,
+      "totalPayment": 61.76,
+      "remainingBalance": 707.83,
+      "paymentDate": "2029-07-04T00:00:00.000Z"
+    },
+    {
+      "id": 139,
+      "periodNumber": 49,
+      "bondId": 3,
+      "interest": 5.1,
+      "amortization": 56.66,
+      "totalPayment": 61.76,
+      "remainingBalance": 651.17,
+      "paymentDate": "2029-08-04T00:00:00.000Z"
+    },
+    {
+      "id": 140,
+      "periodNumber": 50,
+      "bondId": 3,
+      "interest": 4.69,
+      "amortization": 57.07,
+      "totalPayment": 61.76,
+      "remainingBalance": 594.1,
+      "paymentDate": "2029-09-04T00:00:00.000Z"
+    },
+    {
+      "id": 141,
+      "periodNumber": 51,
+      "bondId": 3,
+      "interest": 4.28,
+      "amortization": 57.48,
+      "totalPayment": 61.76,
+      "remainingBalance": 536.62,
+      "paymentDate": "2029-10-04T00:00:00.000Z"
+    },
+    {
+      "id": 142,
+      "periodNumber": 52,
+      "bondId": 3,
+      "interest": 3.87,
+      "amortization": 57.89,
+      "totalPayment": 61.76,
+      "remainingBalance": 478.73,
+      "paymentDate": "2029-11-04T00:00:00.000Z"
+    },
+    {
+      "id": 143,
+      "periodNumber": 53,
+      "bondId": 3,
+      "interest": 3.45,
+      "amortization": 58.31,
+      "totalPayment": 61.76,
+      "remainingBalance": 420.42,
+      "paymentDate": "2029-12-04T00:00:00.000Z"
+    },
+    {
+      "id": 144,
+      "periodNumber": 54,
+      "bondId": 3,
+      "interest": 3.03,
+      "amortization": 58.73,
+      "totalPayment": 61.76,
+      "remainingBalance": 361.69,
+      "paymentDate": "2030-01-04T00:00:00.000Z"
+    },
+    {
+      "id": 145,
+      "periodNumber": 55,
+      "bondId": 3,
+      "interest": 2.61,
+      "amortization": 59.15,
+      "totalPayment": 61.76,
+      "remainingBalance": 302.54,
+      "paymentDate": "2030-02-04T00:00:00.000Z"
+    },
+    {
+      "id": 146,
+      "periodNumber": 56,
+      "bondId": 3,
+      "interest": 2.18,
+      "amortization": 59.58,
+      "totalPayment": 61.76,
+      "remainingBalance": 242.96,
+      "paymentDate": "2030-03-04T00:00:00.000Z"
+    },
+    {
+      "id": 147,
+      "periodNumber": 57,
+      "bondId": 3,
+      "interest": 1.75,
+      "amortization": 60.01,
+      "totalPayment": 61.76,
+      "remainingBalance": 182.95,
+      "paymentDate": "2030-04-04T00:00:00.000Z"
+    },
+    {
+      "id": 148,
+      "periodNumber": 58,
+      "bondId": 3,
+      "interest": 1.32,
+      "amortization": 60.44,
+      "totalPayment": 61.76,
+      "remainingBalance": 122.51,
+      "paymentDate": "2030-05-04T00:00:00.000Z"
+    },
+    {
+      "id": 149,
+      "periodNumber": 59,
+      "bondId": 3,
+      "interest": 0.88,
+      "amortization": 60.88,
+      "totalPayment": 61.76,
+      "remainingBalance": 61.63,
+      "paymentDate": "2030-06-04T00:00:00.000Z"
+    },
+    {
+      "id": 150,
+      "periodNumber": 60,
+      "bondId": 3,
+      "interest": 0.44,
+      "amortization": 61.63,
+      "totalPayment": 61.76,
+      "remainingBalance": 0,
+      "paymentDate": "2030-07-04T00:00:00.000Z"
+    }
+  ]
+}

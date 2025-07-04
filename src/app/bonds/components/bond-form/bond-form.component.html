@@ -1,0 +1,45 @@
+<h1 mat-dialog-title>Nuevo Plan</h1>
+<div class="modal-container">
+  <div class="form-grid">
+    <div class="form-group">
+      <label>Nombre</label>
+      <input type="text" [(ngModel)]="bond.name" />
+    </div>
+    <div class="form-group">
+      <label>Valor Nominal</label>
+      <input type="number" [(ngModel)]="bond.nominalValue" (keydown)="preventInvalidKeys($event)" />
+    </div>
+    <div class="form-group">
+      <label>Fecha de Emisión</label>
+      <input type="date" [(ngModel)]="bond.issueDate" [min]="today" />
+    </div>
+    <div class="form-group">
+      <label>Años de Plazo</label>
+      <input type="number" [(ngModel)]="bond.termInYears" (keydown)="preventInvalidKeys($event)" />
+    </div>
+    <div class="form-group">
+      <label>Interés Anual (%)</label>
+      <input type="number" [(ngModel)]="bond.annualInterestRate" (keydown)="preventInvalidKeys($event)" />
+    </div>
+    <div class="form-group">
+      <label>Tipo de Tasa</label>
+      <select [(ngModel)]="bond.rateType">
+        <option value="" disabled selected>Seleccione...</option>
+        <option *ngFor="let type of rateTypes" [value]="type">{{ type }}</option>
+      </select>
+    </div>
+    <div class="form-group">
+      <label>Frecuencia de Pago</label>
+      <select [(ngModel)]="bond.paymentFrequency">
+        <option value="" disabled selected>Seleccione...</option>
+        <option *ngFor="let freq of paymentFrequencies" [value]="freq">{{ freq }}</option>
+      </select>
+    </div>
+    <div class="form-group">
+      <label>Período de Gracia</label>
+      <input type="number" [(ngModel)]="bond.gracePeriod" (keydown)="preventInvalidKeys($event)" />
+    </div>
+  </div>
+
+  <button class="save-button" (click)="saveBond()">Guardar Plan</button>
+</div>

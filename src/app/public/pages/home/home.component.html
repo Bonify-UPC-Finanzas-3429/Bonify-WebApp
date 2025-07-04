@@ -1,0 +1,8 @@
+<div class="welcome-container">
+  <h1 class="main-title">¡Bienvenido!</h1>
+  <p class="subtitle">Comienza generando tu primer plan de bono corporativo.</p>
+
+  <button (click)="toggleRole()" class="role-button">
+    Cambiar a {{ currentRole === 'user' ? 'Admin' : 'User' }}
+  </button>
+</div>

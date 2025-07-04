@@ -1,0 +1,31 @@
+<div *ngIf="bonds.length > 0; else noBonds">
+  <table class="bond-table">
+    <thead>
+    <tr>
+      <th>ID</th>
+      <th>Name</th>
+      <th>Nominal Value</th>
+      <th>Installments</th>
+      <th>Issue Date</th>
+      <th>Acciones</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let bond of bonds">
+      <td data-label="ID">{{ bond.id }}</td>
+      <td data-label="Name">{{ bond.name }}</td>
+      <td data-label="Nominal Value">{{ bond.nominalValue }}</td>
+      <td data-label="Installments">{{ bond.calculatedInstallment }}</td>
+      <td data-label="Issue Date">{{ bond.issueDate | date: 'yyyy-MM-dd' }}</td>
+      <td data-label="Acciones">
+        <button (click)="viewInstallments(bond.userId, bond.id)">+</button>
+        <button class="btn-delete" (click)="confirmDelete(bond.id)">−</button>
+      </td>
+    </tr>
+    </tbody>
+  </table>
+</div>
+
+<ng-template #noBonds>
+  <p style="margin: 20px; font-family: 'Segoe UI', sans-serif;">No se ha creado ningún plan todavía</p>
+</ng-template>

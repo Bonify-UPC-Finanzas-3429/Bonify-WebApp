@@ -1,0 +1,28 @@
+<div *ngIf="bond; else noBond" class="bond-card">
+  <div class="bond-info">
+    <div class="label">Valor de Bono:</div>
+    <div class="value">{{ bond.nominalValue | number:'1.2-2' }}</div>
+  </div>
+  <div class="bond-info">
+    <div class="label">Fecha de Emisión:</div>
+    <div class="value">{{ formatDate(bond.issueDate) }}</div>
+  </div>
+  <div class="bond-info">
+    <div class="label">Plazo:</div>
+    <div class="value">{{ bond.termInYears }} años</div>
+  </div>
+  <div class="bond-info">
+    <div class="label">TEA:</div>
+    <div class="value">{{ formatPercent7Decimals(bond.tea) }}</div>
+  </div>
+  <div class="bond-info">
+    <div class="label">TCEA:</div>
+    <div class="value">{{ formatPercent7Decimals(bond.tcea) }}</div>
+  </div>
+</div>
+
+<ng-template #noBond>
+  <p style="margin: 20px; font-family: 'Segoe UI', sans-serif;">
+    No se encontró el plan solicitado.
+  </p>
+</ng-template>

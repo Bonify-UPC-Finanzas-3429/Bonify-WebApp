@@ -1,0 +1,14 @@
+<mat-toolbar color="primary" class="toolbar">
+  <div class="logo-section" (click)="goHome()" style="cursor: pointer;">
+    <img src="assets/images/Logo.png" alt="Bonify logo" class="logo" />
+  </div>
+
+  <span class="spacer"></span>
+
+  <div class="button-section">
+    <button mat-button class="toolbar-button" (click)="onPlansClick()">
+      {{ currentRole === 'admin' ? 'Administrar' : 'Planes' }}
+    </button>
+    <button mat-button class="toolbar-button" (click)="onProfileClick()">Perfil</button>
+  </div>
+</mat-toolbar>

@@ -1,0 +1,42 @@
+.bond-card {
+  background: #f0f4f8;
+  border-radius: 8px;
+  padding: 20px;
+  width: 320px;
+  margin: 12px;
+  box-shadow: 0 3px 6px rgba(0,0,0,0.1);
+  font-family: 'Arial', sans-serif;
+  box-sizing: border-box;
+}
+
+.bond-info {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 6px;
+}
+
+.label {
+  font-weight: 600;
+  color: #222;
+}
+
+.value {
+  color: #03989e;
+  font-weight: 600;
+}
+
+.bond-cards-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  gap: 12px;
+  box-sizing: border-box;
+  padding: 0 12px;
+}
+
+@media (max-width: 768px) {
+  .bond-card {
+    width: 100%;
+    margin: 8px 0;
+  }
+}

@@ -1,0 +1,28 @@
+<div *ngIf="installments.length > 0; else noInstallments">
+  <table class="installment-table">
+    <thead>
+    <tr>
+      <th># Cuota</th>
+      <th>Pago Total</th>
+      <th>Amortización</th>
+      <th>Interés</th>
+      <th>Saldo Pendiente</th>
+      <th>Fecha de Pago</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let i of installments">
+      <td data-label="# Cuota">{{ i.periodNumber }}</td>
+      <td data-label="Pago Total">{{ i.totalPayment | number:'1.2-2' }}</td>
+      <td data-label="Amortización">{{ i.amortization | number:'1.2-2' }}</td>
+      <td data-label="Interés">{{ i.interest | number:'1.2-2' }}</td>
+      <td data-label="Saldo Pendiente">{{ i.remainingBalance | number:'1.2-2' }}</td>
+      <td data-label="Fecha de Pago">{{ i.paymentDate | date:'yyyy-MM-dd' }}</td>
+    </tr>
+    </tbody>
+  </table>
+</div>
+
+<ng-template #noInstallments>
+  <p style="margin: 20px; font-family: 'Segoe UI', sans-serif;">No se han generado cuotas para este plan.</p>
+</ng-template>
