@@ -20,7 +20,9 @@ export class App {
     this.router.events
       .pipe(filter(event => event instanceof NavigationEnd))
       .subscribe((event: NavigationEnd) => {
-        this.isWelcomePage = event.urlAfterRedirects === '/welcome';
+        const url = event.urlAfterRedirects;
+        this.isWelcomePage = ['/welcome', '/login', '/register', '/reset'].includes(url);
       });
   }
+
 }
