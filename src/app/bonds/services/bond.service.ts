@@ -13,13 +13,14 @@ export class BondService extends BaseService<Bond> {
     this.resourceEndpoint = '/bonds';
   }
   getByUserId(userId: number): Observable<Bond[]> {
-    return this.http.get<Bond[]>(`${this.basePath}${this.resourceEndpoint}?userId=${userId}`, this.httpOptions)
+    return this.http.get<Bond[]>(`${this.basePath}${this.resourceEndpoint}/user/${userId}`, this.getHttpOptions())
       .pipe(retry(2), catchError(this.handleError));
   }
+
   getByBondId(bondId: string): Observable<Bond | null> {
-    return this.http.get<Bond[]>(`${this.basePath}/bonds?bondId=${bondId}`, this.httpOptions).pipe(
+    return this.http.get<Bond>(`${this.basePath}${this.resourceEndpoint}/${bondId}`, this.getHttpOptions()).pipe(
       retry(2),
-      map(bonds => bonds[0] ?? null),
+      map(bond => bond ?? null),
       catchError(this.handleError)
     );
   }

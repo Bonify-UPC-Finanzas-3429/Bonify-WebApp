@@ -11,15 +11,15 @@ import { Installment } from '../../models/installment.entity';
   styleUrls: ['./installment-table.component.css']
 })
 export class InstallmentTableComponent implements OnInit {
-  @Input() bondId!: number;
+  @Input() bondNumericId!: number;
 
   installments: Installment[] = [];
 
   constructor(private installmentService: InstallmentService) {}
 
   ngOnInit(): void {
-    if (this.bondId) {
-      this.installmentService.getByBondId(this.bondId).subscribe({
+    if (this.bondNumericId) {
+      this.installmentService.getByBondId(this.bondNumericId).subscribe({
         next: data => this.installments = data,
         error: err => console.error('Error loading installments', err)
       });

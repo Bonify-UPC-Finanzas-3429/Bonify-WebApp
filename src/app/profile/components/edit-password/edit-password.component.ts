@@ -3,7 +3,7 @@ import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { UserProfilesService } from '../../services/user.service';
-import { UserAuthService } from '../../../iam/services/authuser.service';
+import {UserAuthService} from '../../../iam/services/authuser.service';
 
 @Component({
   selector: 'app-edit-password',
@@ -24,7 +24,7 @@ export class EditPasswordComponent {
     @Inject(MAT_DIALOG_DATA) public data: { userId: number }
   ) {}
 
-  updatePassword() {
+  async updatePassword() {
     if (!this.currentPassword || !this.newPassword || !this.confirmPassword) {
       alert('Por favor, complete todos los campos.');
       return;
@@ -58,24 +58,34 @@ export class EditPasswordComponent {
       return;
     }
 
-    if (!this.data.userId) return;
+    if (this.newPassword === this.currentPassword) {
+      alert('La nueva contraseña no puede ser igual a la actual.');
+      return;
+    }
 
-    this.profileService.getById(this.data.userId).subscribe(profile => {
-      const payload = {
-        username: profile.email,
-        password: this.newPassword
-      };
+    const email = localStorage.getItem('userEmail');
+    if (!email) {
+      alert('No se encontró el correo del usuario.');
+      return;
+    }
 
-      this.authService.changePassword(payload).subscribe({
-        next: () => {
-          alert('Contraseña actualizada correctamente.');
-          this.dialogRef.close();
-        },
-        error: (err) => {
-          console.error(err);
-          alert('Error al actualizar la contraseña.');
-        }
-      });
+    const loginResponse = await this.authService.signInUser(email, this.currentPassword);
+    if (loginResponse.status !== 200 ) {
+      alert('La contraseña actual es incorrecta.');
+      return;
+    }
+
+    const changeResponse = await this.authService.changePassword({
+      username: email,
+      password: this.newPassword
     });
+
+    if (changeResponse.status === 200) {
+      alert('Contraseña actualizada exitosamente.');
+      this.dialogRef.close();
+    } else {
+      alert('Error al actualizar la contraseña.');
+    }
   }
+
 }

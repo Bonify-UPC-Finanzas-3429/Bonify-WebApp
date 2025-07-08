@@ -19,13 +19,13 @@
     <td data-label="Teléfono">{{ user.phoneNumber }}</td>
     <td data-label="Rol">
       <select [(ngModel)]="user.role" (change)="updateRole(user)">
-        <option value="user">User</option>
-        <option value="admin">Admin</option>
+        <option value="USER">User</option>
+        <option value="ADMIN">Admin</option>
       </select>
     </td>
     <td data-label="Acciones">
       <button (click)="viewProfile(user.id)">Ver perfil</button>
-      <button *ngIf="user.role !== 'admin'" (click)="viewPlans(user.id)">Ver planes</button>
+      <button *ngIf="user.role !== 'ADMIN'" (click)="viewPlans(user.id)">Ver planes</button>
     </td>
   </tr>
   </tbody>

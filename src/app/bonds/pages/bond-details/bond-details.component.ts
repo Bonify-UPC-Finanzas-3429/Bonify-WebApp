@@ -16,11 +16,13 @@ import { BondCardComponent } from '../../components/bond-card/bond-card.componen
 export class BondDetailsComponent implements OnInit {
   userId!: number;
   bondId!: string;
+  bondNumericId!: number;
 
   constructor(private route: ActivatedRoute) {}
 
   ngOnInit(): void {
     this.userId = Number(this.route.snapshot.paramMap.get('userId'));
     this.bondId = this.route.snapshot.paramMap.get('bondId')!;
+    this.bondNumericId = Number(this.route.snapshot.paramMap.get('bondNumericId'));
   }
 }

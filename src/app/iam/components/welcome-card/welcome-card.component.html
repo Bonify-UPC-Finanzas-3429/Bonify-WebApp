@@ -1,0 +1,8 @@
+<div class="welcome-card">
+  <img src="assets/images/Logo.png" alt="Bonify logo" class="logo" />
+  <p class="welcome-subtitle">Tu herramienta para bonos corporativos</p>
+  <div class="welcome-buttons">
+    <button [routerLink]="['/register']" [queryParams]="{ role: 'USER' }">Registrar</button>
+    <button (click)="goToLogin()">Entrar</button>
+  </div>
+</div>

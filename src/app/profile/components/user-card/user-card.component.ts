@@ -4,6 +4,7 @@ import { NgIf } from '@angular/common';
 import { UserProfilesService } from '../../services/user.service';
 import { EditProfileComponent } from '../edit-profile/edit-profile.component';
 import { MatDialog } from '@angular/material/dialog';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-user-card',
@@ -18,7 +19,8 @@ export class UserCardComponent implements OnInit, OnChanges {
 
   constructor(
     private userProfilesService: UserProfilesService,
-    private dialog: MatDialog
+    private dialog: MatDialog,
+    private router: Router
   ) {}
 
   ngOnInit(): void {
@@ -39,20 +41,24 @@ export class UserCardComponent implements OnInit, OnChanges {
   }
 
   openEditDialog(): void {
-    this.userProfilesService.getById(this.userId).subscribe(data => {
-      const dialogRef = this.dialog.open(EditProfileComponent, {
-        data: { userId: this.userId },
-        width: 'auto',
-        maxWidth: '90vw',
-        height: 'auto',
-        panelClass: 'custom-dialog-container',
-        autoFocus: false
-      });
+    const dialogRef = this.dialog.open(EditProfileComponent, {
+      data: { userId: this.userId },
+      width: 'auto',
+      maxWidth: '90vw',
+      height: 'auto',
+      panelClass: 'custom-dialog-container',
+      autoFocus: false
+    });
 
-      dialogRef.afterClosed().subscribe(() => {
+    dialogRef.afterClosed().subscribe((wasUpdated) => {
+      if (wasUpdated) {
         this.loadUser();
-      });
+      }
     });
   }
 
+  logout(): void {
+    localStorage.clear();
+    this.router.navigate(['/welcome']);
+  }
 }

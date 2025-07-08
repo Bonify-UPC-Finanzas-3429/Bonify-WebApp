@@ -11,14 +11,14 @@
     </tr>
     </thead>
     <tbody>
-    <tr *ngFor="let bond of bonds">
-      <td data-label="ID">{{ bond.id }}</td>
+    <tr *ngFor="let bond of bonds; let i = index">
+      <td data-label="ID">{{ i + 1 }}</td>
       <td data-label="Name">{{ bond.name }}</td>
       <td data-label="Nominal Value">{{ bond.nominalValue }}</td>
       <td data-label="Installments">{{ bond.calculatedInstallment }}</td>
       <td data-label="Issue Date">{{ bond.issueDate | date: 'yyyy-MM-dd' }}</td>
       <td data-label="Acciones">
-        <button (click)="viewInstallments(bond.userId, bond.id)">+</button>
+        <button (click)="viewInstallments(userId, bond)">+</button>
         <button class="btn-delete" (click)="confirmDelete(bond.id)">−</button>
       </td>
     </tr>

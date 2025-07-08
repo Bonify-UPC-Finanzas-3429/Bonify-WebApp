@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Bond } from '../../models/bond.entity';
@@ -14,8 +14,7 @@ import { InstallmentService } from '../../services/installment.service';
 })
 export class BondTableComponent implements OnInit {
   bonds: Bond[] = [];
-  userId!: number;
-
+  @Input() userId!: number;
   constructor(
     private bondService: BondService,
     private installmentService: InstallmentService,
@@ -24,14 +23,26 @@ export class BondTableComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
-    this.userId = Number(this.route.snapshot.paramMap.get('userId'));
+    if (!isNaN(this.userId)) {
+      this.bondService.getByUserId(this.userId).subscribe({
+        next: data => {
+          console.log('Bonds cargados:', data);
+          this.bonds = data;
+        },
+        error: err => console.error('Error loading bonds by userId', err)
+      });
+    } else {
+      this.loadBonds();
+    }
+  }
+
+
+  refreshUserBonds(): void {
     if (!isNaN(this.userId)) {
       this.bondService.getByUserId(this.userId).subscribe({
         next: data => this.bonds = data,
         error: err => console.error('Error loading bonds by userId', err)
       });
-    } else {
-      this.loadBonds();
     }
   }
 
@@ -42,23 +53,20 @@ export class BondTableComponent implements OnInit {
     });
   }
 
-  viewInstallments(userId: number, bondId: number): void {
-    this.router.navigate([`/bonds/${userId}/details/${bondId}`]);
+  viewInstallments(userId: number, bond: Bond): void {
+    this.router.navigate([`/bonds/${userId}/details/${bond.bondId}/${bond.id}`]);
   }
 
-  confirmDelete(bondId: number): void {
+  confirmDelete(bondNumericId: number): void {
     const confirmed = confirm('¿Estás seguro de que deseas eliminar este plan y sus cuotas?');
     if (!confirmed) return;
 
-    this.installmentService.deleteByBondId(bondId).subscribe({
+    this.installmentService.deleteByBondId(bondNumericId).subscribe({
       next: () => {
-
-        this.bondService.delete(bondId).subscribe({
+        this.bondService.delete(bondNumericId).subscribe({
           next: () => {
             alert('Plan y cuotas eliminados correctamente');
-            this.bondService.getByUserId(this.userId).subscribe({
-              next: data => this.bonds = data
-            });
+            this.refreshUserBonds();
           },
           error: err => {
             console.error('Error al eliminar bono:', err);

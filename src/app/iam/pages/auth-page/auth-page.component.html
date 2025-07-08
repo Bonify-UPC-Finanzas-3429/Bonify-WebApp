@@ -1,0 +1,9 @@
+<div class="page-wrapper">
+  <app-auth-form [mode]="mode">
+    <div class="welcome-content">
+      <p class="subtitle">
+        {{ mode === 'login' ? 'Inicia Sesión' : mode === 'register' ? 'Registrar Cuenta' : 'Reestablecer contraseña' }}
+      </p>
+    </div>
+  </app-auth-form>
+</div>

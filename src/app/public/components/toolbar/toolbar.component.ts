@@ -8,27 +8,30 @@ import { MatToolbar } from '@angular/material/toolbar';
   standalone: true,
   templateUrl: './toolbar.component.html',
   styleUrls: ['./toolbar.component.css'],
-  imports: [
-    MatButton,
-    MatToolbar
-  ]
+  imports: [MatButton, MatToolbar]
 })
 export class ToolbarComponent implements OnInit {
-  currentRole: 'user' | 'admin' = 'user';
+  currentRole: 'USER' | 'ADMIN' = 'USER';
 
   constructor(private router: Router) {}
 
   ngOnInit(): void {
     const savedRole = localStorage.getItem('userRole');
-    this.currentRole = savedRole === 'admin' ? 'admin' : 'user';
+    if (savedRole?.toUpperCase() === 'ADMIN') {
+      this.currentRole = 'ADMIN';
+    } else {
+      this.currentRole = 'USER';
+    }
   }
 
   onPlansClick(): void {
-    if (this.currentRole === 'admin') {
+    const userId = localStorage.getItem('userId');
+    if (this.currentRole === 'ADMIN') {
       this.router.navigate(['/management']);
-    } else {
-      const userId = localStorage.getItem('userId');
+    } else if (userId) {
       this.router.navigate(['/bonds', userId]);
+    } else {
+      alert('ID de usuario no encontrado.');
     }
   }
 
@@ -44,5 +47,4 @@ export class ToolbarComponent implements OnInit {
   goHome(): void {
     this.router.navigate(['/']);
   }
-
 }

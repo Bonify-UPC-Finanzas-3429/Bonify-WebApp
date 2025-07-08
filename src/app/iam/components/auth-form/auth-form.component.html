@@ -1,0 +1,112 @@
+<div class="auth-card">
+  <img src="assets/images/Logo.png" alt="Bonify logo" class="logo" />
+  <div class="auth-title">
+    <ng-content></ng-content>
+  </div>
+  <!-- LOGIN -->
+  <form *ngIf="mode === 'login'" (submit)="onSubmit($event)">
+    <label>Correo electrónico</label>
+    <input type="email" name="email" required />
+
+    <label>Contraseña</label>
+    <input
+      type="password"
+      name="password"
+      required
+      minlength="8"
+      pattern="(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[^A-Za-z0-9]).{8,}"
+      title="Mínimo 8 caracteres, incluyendo mayúscula, minúscula, número y símbolo"
+    />
+
+    <button type="submit">Iniciar sesión</button>
+
+    <p class="link-reset">¿Olvidaste tu contraseña? <a href="/reset">Restablécela</a></p>
+  </form>
+  <p *ngIf="errorMessage && mode === 'login'" class="error-message">{{ errorMessage }}</p>
+
+  <!-- REGISTER -->
+  <form *ngIf="mode === 'register'" (submit)="onSubmit($event)">
+    <label>Correo electrónico</label>
+    <input type="email" name="email" required />
+
+    <label>Nombres</label>
+    <input
+      type="text"
+      name="firstName"
+      required
+      pattern="^[A-Za-zÁÉÍÓÚáéíóúÑñ\s]+$"
+      title="Solo letras y espacios"
+    />
+
+    <label>Apellidos</label>
+    <input
+      type="text"
+      name="lastName"
+      required
+      pattern="^[A-Za-zÁÉÍÓÚáéíóúÑñ\s]+$"
+      title="Solo letras y espacios"
+    />
+
+    <label>DNI</label>
+    <input
+      type="text"
+      name="dni"
+      required
+      pattern="\d{8}"
+      maxlength="8"
+      inputmode="numeric"
+      oninput="this.value = this.value.replace(/[^0-9]/g, '')"
+      title="Debe contener 8 dígitos numéricos"
+    />
+
+    <label>Teléfono</label>
+    <input
+      type="text"
+      name="phone"
+      required
+      pattern="\d{9}"
+      maxlength="9"
+      inputmode="numeric"
+      oninput="this.value = this.value.replace(/[^0-9]/g, '')"
+      title="Debe contener 9 dígitos numéricos"
+    />
+
+    <label>Contraseña</label>
+    <input
+      type="password"
+      name="password"
+      required
+      minlength="8"
+      pattern="(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[^A-Za-z0-9]).{8,}"
+      title="Mínimo 8 caracteres, incluyendo mayúscula, minúscula, número y símbolo"
+    />
+
+    <label>Repetir contraseña</label>
+    <input type="password" name="repeatPassword" required />
+
+    <button type="submit">Registrarse</button>
+  </form>
+  <p *ngIf="errorMessage && mode === 'register'" class="error-message">{{ errorMessage }}</p>
+
+  <!-- RESET -->
+  <form *ngIf="mode === 'reset'" (submit)="onSubmit($event)">
+    <label>Correo electrónico</label>
+    <input type="email" name="email" required />
+
+    <label>Nueva contraseña</label>
+    <input
+      type="password"
+      name="password"
+      required
+      minlength="8"
+      pattern="(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[^A-Za-z0-9]).{8,}"
+      title="Mínimo 8 caracteres, incluyendo mayúscula, minúscula, número y símbolo"
+    />
+
+    <label>Repetir contraseña</label>
+    <input type="password" name="repeatPassword" required />
+
+    <button type="submit">Restablecer contraseña</button>
+  </form>
+  <p *ngIf="errorMessage && mode === 'reset'" class="error-message">{{ errorMessage }}</p>
+</div>

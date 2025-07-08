@@ -14,12 +14,24 @@ export class InstallmentService extends BaseService<Installment> {
   }
 
   getByBondId(bondId: number): Observable<Installment[]> {
-    return this.http.get<Installment[]>(`${this.basePath}${this.resourceEndpoint}?bondId=${bondId}`, this.httpOptions)
-      .pipe(retry(2), catchError(this.handleError));
+    return this.http.get<Installment[]>(
+      `${this.basePath}${this.resourceEndpoint}/bond/${bondId}`,
+      this.getHttpOptions()
+    ).pipe(retry(2), catchError(this.handleError));
   }
 
   deleteByBondId(bondId: number): Observable<any> {
-    return this.http.delete<Installment[]>(`${this.basePath}${this.resourceEndpoint}?bondId=${bondId}`, this.httpOptions)
-      .pipe(retry(2), catchError(this.handleError));
+    return this.http.delete(
+      `${this.basePath}${this.resourceEndpoint}/bond/${bondId}`,
+      this.getHttpOptions()
+    ).pipe(retry(2), catchError(this.handleError));
+  }
+
+  createAll(installments: Installment[]): Observable<any> {
+    return this.http.post(
+      `${this.basePath}${this.resourceEndpoint}/batch`,
+      installments,
+      this.getHttpOptions()
+    ).pipe(retry(2), catchError(this.handleError));
   }
 }

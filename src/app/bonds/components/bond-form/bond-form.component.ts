@@ -4,6 +4,7 @@ import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 import { Installment } from '../../models/installment.entity';
 import { Bond } from '../../models/bond.entity';
+import { ActivatedRoute } from '@angular/router';
 import { BondService } from '../../services/bond.service';
 import { InstallmentService } from '../../services/installment.service';
 
@@ -28,19 +29,22 @@ export class BondFormComponent {
     calculatedInstallment: 0,
     tea: 0,
     tcea: 0,
-    userId: 1
+    userId: 0
   };
 
-  rateTypes = ['Efectiva', 'Nominal'];
-  paymentFrequencies = ['Mensual', 'Bimestral', 'Trimestral', 'Cuatrimestral', 'Semestral', 'Anual', 'Quincenal'];
+  rateTypes = ['EFECTIVA', 'NOMINAL'];
+  paymentFrequencies = ['MENSUAL', 'BIMESTRAL', 'TRIMESTRAL', 'CUATRIMESTRAL', 'SEMESTRAL', 'ANUAL', 'QUINCENAL'];
   today = new Date().toISOString().split('T')[0];
 
   constructor(
     @Optional() private dialogRef: MatDialogRef<BondFormComponent>,
     @Optional() @Inject(MAT_DIALOG_DATA) public data: any,
     private bondService: BondService,
-    private installmentService: InstallmentService
-  ) {}
+    private installmentService: InstallmentService,
+    private route: ActivatedRoute
+  ) {
+    this.bond.userId = data?.userId || 0;
+  }
 
   preventInvalidKeys(event: KeyboardEvent) {
     if (['-', '+'].includes(event.key)) {
@@ -171,9 +175,7 @@ export class BondFormComponent {
         ));
       }
 
-      for (const inst of installments) {
-        await this.installmentService.create(inst).toPromise();
-      }
+      this.installmentService.createAll(installments);
 
       alert('¡Plan creado exitosamente!');
       this.dialogRef?.close(true);
