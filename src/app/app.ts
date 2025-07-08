@@ -21,7 +21,8 @@ export class App {
       .pipe(filter(event => event instanceof NavigationEnd))
       .subscribe((event: NavigationEnd) => {
         const url = event.urlAfterRedirects;
-        this.isWelcomePage = ['/welcome', '/login', '/register', '/reset'].includes(url);
+        this.isWelcomePage = ['/welcome', '/login', '/register', '/reset']
+          .some(path => url.startsWith(path));
       });
   }
 
