@@ -85,8 +85,8 @@ export class AuthFormComponent {
         const loginResponse = await this.authService.signInUser(email, password);
 
         if (loginResponse.status === 200 && loginResponse.data) {
-          this.storeSessionData({token: loginResponse.data}, email);
-          window.location.href = '/home';
+          await this.storeSessionData({token: loginResponse.data}, email);
+          await this.router.navigate(['/home']);
         } else {
           this.errorMessage = 'Inicio de Sesión fallido después del registro.';
         }
@@ -108,8 +108,8 @@ export class AuthFormComponent {
         );
 
         if (response.status === 200) {
-          this.storeSessionData({token: response.data}, email);
-          window.location.href = '/home';
+          await this.storeSessionData({token: response.data}, email);
+          await this.router.navigate(['/home']);
 
         } else {
           this.errorMessage = 'Inicio de Sesion Fallido. Por favor revise sus datos e intente nuevamente.';
