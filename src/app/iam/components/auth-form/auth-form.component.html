@@ -20,7 +20,7 @@
 
     <button type="submit">Iniciar sesión</button>
 
-    <p class="link-reset">¿Olvidaste tu contraseña? <a href="/reset">Restablécela</a></p>
+    <p class="link-reset">¿Olvidaste tu contraseña? <a [routerLink]="[]" [queryParams]="{ mode: 'reset' }">Restablécela</a></p>
   </form>
   <p *ngIf="errorMessage && mode === 'login'" class="error-message">{{ errorMessage }}</p>
 

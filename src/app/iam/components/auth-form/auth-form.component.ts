@@ -1,6 +1,6 @@
 import { Component, Input, OnInit, inject } from '@angular/core';
 import { NgIf } from '@angular/common';
-import { Router, ActivatedRoute } from '@angular/router';
+import {Router, ActivatedRoute, RouterLink} from '@angular/router';
 import { RoleService } from '../../services/role.service';
 import { UserAuthService } from '../../services/authuser.service';
 import {UserProfilesService} from '../../../profile/services/user.service';
@@ -9,7 +9,7 @@ import {firstValueFrom} from 'rxjs';
 @Component({
   selector: 'app-auth-form',
   standalone: true,
-  imports: [NgIf],
+  imports: [NgIf, RouterLink],
   templateUrl: './auth-form.component.html',
   styleUrl: './auth-form.component.css'
 })
