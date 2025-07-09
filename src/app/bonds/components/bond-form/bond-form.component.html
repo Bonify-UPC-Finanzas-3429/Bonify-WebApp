@@ -36,8 +36,11 @@
       </select>
     </div>
     <div class="form-group">
-      <label>Período de Gracia</label>
-      <input type="number" [(ngModel)]="bond.gracePeriod" (keydown)="preventInvalidKeys($event)" />
+      <label>Tipo de Período de Gracia</label>
+      <select [(ngModel)]="bond.gracePeriodType">
+        <option value="" disabled selected>Seleccione...</option>
+        <option *ngFor="let type of gracePeriodTypes" [value]="type">{{ type }}</option>
+      </select>
     </div>
   </div>
 

@@ -1,5 +1,5 @@
 import { Component, Inject, Optional } from '@angular/core';
-import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
+import {MatDialogRef, MAT_DIALOG_DATA, MatDialogTitle} from '@angular/material/dialog';
 import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 import { Installment } from '../../models/installment.entity';
@@ -11,7 +11,7 @@ import { InstallmentService } from '../../services/installment.service';
 @Component({
   selector: 'app-bond-form',
   standalone: true,
-  imports: [CommonModule, FormsModule],
+  imports: [CommonModule, FormsModule, MatDialogTitle],
   templateUrl: './bond-form.component.html',
   styleUrls: ['./bond-form.component.css'],
   providers: [BondService, InstallmentService]
@@ -25,7 +25,7 @@ export class BondFormComponent {
     annualInterestRate: 0,
     rateType: '',
     paymentFrequency: '',
-    gracePeriod: 0,
+    gracePeriodType: '',
     calculatedInstallment: 0,
     tea: 0,
     tcea: 0,
@@ -34,6 +34,7 @@ export class BondFormComponent {
 
   rateTypes = ['EFECTIVA', 'NOMINAL'];
   paymentFrequencies = ['MENSUAL', 'BIMESTRAL', 'TRIMESTRAL', 'CUATRIMESTRAL', 'SEMESTRAL', 'ANUAL', 'QUINCENAL'];
+  gracePeriodTypes = ['NINGUNO', 'PARCIAL', 'TOTAL'];
   today = new Date().toISOString().split('T')[0];
 
   constructor(
@@ -67,7 +68,7 @@ export class BondFormComponent {
     const {
       name, nominalValue, issueDate, termInYears,
       annualInterestRate, rateType, paymentFrequency,
-      gracePeriod, userId
+      gracePeriodType, userId
     } = this.bond;
 
     const errors: string[] = [];
@@ -79,7 +80,6 @@ export class BondFormComponent {
     if (annualInterestRate <= 0) errors.push('Interés anual debe ser mayor a 0.');
     if (!rateType.trim()) errors.push('Tipo de tasa es obligatorio.');
     if (!paymentFrequency.trim()) errors.push('Frecuencia de pago es obligatoria.');
-    if (gracePeriod < 0) errors.push('Período de gracia no puede ser negativo.');
 
     if (errors.length > 0) {
       alert('Por favor corrige los siguientes errores:\n- ' + errors.join('\n- '));
@@ -124,7 +124,7 @@ export class BondFormComponent {
         annualInterestRate,
         rateType,
         paymentFrequency,
-        gracePeriod,
+        gracePeriodType,
         totalInstallments,
         tcea,
         tea,
@@ -146,8 +146,22 @@ export class BondFormComponent {
 
       for (let i = 1; i <= totalInstallments; i++) {
         const interest = Number((balance * ratePerPeriod).toFixed(2));
-        const amortization = Number((installmentRaw - interest).toFixed(2));
-        const totalPayment = Number((interest + amortization).toFixed(2));
+        let amortization = 0;
+        let interestToUse = interest;
+
+        if (
+          (gracePeriodType === 'TOTAL') ||
+          (gracePeriodType === 'PARCIAL')
+        ) {
+          if (gracePeriodType === 'TOTAL') {
+            interestToUse = 0;
+          }
+          amortization = 0;
+        } else {
+          amortization = Number((installmentRaw - interestToUse).toFixed(2));
+        }
+
+        const totalPayment = Number((interestToUse + amortization).toFixed(2));
         let adjustedAmortization = amortization;
         let adjustedBalance = Number((balance - amortization).toFixed(2));
 

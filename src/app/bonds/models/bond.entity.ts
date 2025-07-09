@@ -9,7 +9,7 @@ export class Bond {
     public annualInterestRate: number,
     public rateType: string,
     public paymentFrequency: string,
-    public gracePeriod: number | null,
+    public gracePeriod: string,
     public calculatedInstallment: number,
     public tcea: number,
     public tea: number,
