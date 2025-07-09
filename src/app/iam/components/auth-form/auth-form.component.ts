@@ -1,4 +1,4 @@
-import { Component, inject, Input } from '@angular/core';
+import { Component, Input, OnInit, inject } from '@angular/core';
 import { NgIf } from '@angular/common';
 import { Router, ActivatedRoute } from '@angular/router';
 import { RoleService } from '../../services/role.service';
@@ -8,28 +8,63 @@ import {firstValueFrom} from 'rxjs';
 
 @Component({
   selector: 'app-auth-form',
+  standalone: true,
   imports: [NgIf],
   templateUrl: './auth-form.component.html',
   styleUrl: './auth-form.component.css'
 })
-export class AuthFormComponent {
+export class AuthFormComponent implements OnInit {
   private route = inject(ActivatedRoute);
   private router = inject(Router);
   private roleService = inject(RoleService);
   private authService = inject(UserAuthService);
-  private userProfilesService = inject(UserProfilesService);
 
   roleFromUrl: string = 'USER';
   @Input() mode: 'login' | 'register' | 'reset' = 'login';
   errorMessage: string = '';
+  private userProfilesService = inject(UserProfilesService);
 
-  constructor() {
+
+  ngOnInit(): void {
     this.route.queryParams.subscribe(params => {
-      if (params['role']) {
-        this.roleFromUrl = params['role'];
-      }
+      if (params['role']) this.roleFromUrl = params['role'];
     });
+
+    this.autoRegisterAdmin();
   }
+
+  async autoRegisterAdmin() {
+    try {
+      await firstValueFrom(this.userProfilesService.getByEmail('admin@gmail.com'));
+      // Si no lanza error, ya existe
+      return;
+    } catch (error: any) {
+      // Solo continuamos si es un error 404 (usuario no encontrado)
+      if (error?.status !== 404 && error?.status !== 403) {
+        console.error('Error al verificar si admin existe:', error);
+        return;
+      }
+    }
+
+    const adminUser = {
+      email: 'admin@gmail.com',
+      password: 'Admin123!',
+      firstName: 'Admin',
+      lastName: 'Bonify',
+      dni: '12345678',
+      phone: '999999999',
+      role: 'ADMIN'
+    };
+
+    try {
+      await this.authService.signUp(adminUser);
+      console.log('Usuario admin creado automáticamente');
+    } catch (error) {
+      console.error('Error al registrar admin:', error);
+    }
+  }
+
+
 
   async onSubmit(event: Event) {
     event.preventDefault();
