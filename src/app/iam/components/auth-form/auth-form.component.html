@@ -3,6 +3,7 @@
   <div class="auth-title">
     <ng-content></ng-content>
   </div>
+
   <!-- LOGIN -->
   <form *ngIf="mode === 'login'" (submit)="onSubmit($event)">
     <label>Correo electrónico</label>
@@ -20,7 +21,10 @@
 
     <button type="submit">Iniciar sesión</button>
 
-    <p class="link-reset">¿Olvidaste tu contraseña? <a [routerLink]="[]" [queryParams]="{ mode: 'reset' }">Restablécela</a></p>
+    <p class="link-reset">
+      ¿Olvidaste tu contraseña?
+      <a [routerLink]="[]" [queryParams]="{ mode: 'reset' }">Restablécela</a>
+    </p>
   </form>
   <p *ngIf="errorMessage && mode === 'login'" class="error-message">{{ errorMessage }}</p>
 
@@ -30,22 +34,10 @@
     <input type="email" name="email" required />
 
     <label>Nombres</label>
-    <input
-      type="text"
-      name="firstName"
-      required
-      pattern="^[A-Za-zÁÉÍÓÚáéíóúÑñ\s]+$"
-      title="Solo letras y espacios"
-    />
+    <input type="text" name="firstName" required pattern="^[A-Za-zÁÉÍÓÚáéíóúÑñ\s]+$" title="Solo letras y espacios" />
 
     <label>Apellidos</label>
-    <input
-      type="text"
-      name="lastName"
-      required
-      pattern="^[A-Za-zÁÉÍÓÚáéíóúÑñ\s]+$"
-      title="Solo letras y espacios"
-    />
+    <input type="text" name="lastName" required pattern="^[A-Za-zÁÉÍÓÚáéíóúÑñ\s]+$" title="Solo letras y espacios" />
 
     <label>DNI</label>
     <input
